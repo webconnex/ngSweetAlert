@@ -19,9 +19,10 @@ angular.module('oitozero.ngSweetAlert', [])
 			$rootScope.$evalAsync(function(){
 				if( typeof(arg2) === 'function' ) {
 					swal( arg1, function(isConfirm){
-						$rootScope.$evalAsync( function(){
+						//$rootScope.$evalAsync( function(){
 							arg2(isConfirm);
-						});
+						//});
+						$rootScope.$digest();
 					}, arg3 );
 				} else {
 					swal( arg1, arg2, arg3 );
